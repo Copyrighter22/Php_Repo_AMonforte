@@ -7,17 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-            header{
-                background: beige;
-                padding: 2em;
-                text-align: center;
-            }
+        header{
+            background: beige;
+            padding: 2em;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
 <header>
-    <h1><?=$greeting;?></h1>
+    <h1> <?=$greeting;?> </h1>
 </header>
-
 </body>
 </html>
