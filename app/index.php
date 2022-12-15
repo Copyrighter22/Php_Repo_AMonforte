@@ -1,30 +1,22 @@
 <?php
 
-class Task{
-    protected $id;
-    protected $title;
-    protected $description;
-    protected $completed;
+require 'app/helpers.php';
+require 'app/Task.php';
 
-    public function __construct($id,$completed,$description,$title)
-    {
-        $this->id = $id;
-        $this->title = $title;
-        $this->description = $description;
-        $this->completed = $completed;
+$usuario = 'debian-sys-maint';
+$contrasena = 'uLBXukzuZ2vnLyQ7';
 
-    }
+try{
+    $dbh = new PDO('mysql:host=localhost;dbname=phplaraveldevs', $usuario, $contrasena);
+}catch (\Exception $e){
+    echo 'Error de connexió a la base de dades';
 }
 
-$task = new Task(1,0,'a la panaderia','Compra el pa');
-var_dump($task);
+$statement = $dbh->prepare('SELECT * FROM task;');
 
-//API
-function greet(){
-    $name = htmlspecialchars($_GET['name']);
-    $cognom = htmlspecialchars($_GET['cognom']);
+$statement->execute();
 
-    return "Hola $name $cognom ";
-}
+$task = $statement->fetchAll(PDO::FETCH_CLASS, 'Task');
+
 
 $greeting = greet();

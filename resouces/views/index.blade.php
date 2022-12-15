@@ -27,12 +27,14 @@
             <th></th>
         </tr>
 
+        <?php foreach ($task as $task): ?>
         <tr>
-            <td>1</td>
-            <td>Estudiar PHP</td>
-            <td>dels apunts de screencasts</td>
-            <td>1</td>
+            <th><?=$task->id;?></th>
+            <th><?=$task->title;?></th>
+            <th><?=$task->description;?></th>
+            <th><?=$task->complited;?></th>
         </tr>
+        <?php endforeach; ?>
     </table>
 </header>
 </body>
