@@ -11,6 +11,14 @@ function dd($xivato)
     var_dump($xivato);
     die();
 }
+function fetchAllTask($dbh){
+    $statement = $dbh->prepare('SELECT * FROM task;');
+
+    $statement->execute();
+
+    return $statement->fetchAll(PDO::FETCH_CLASS, 'Task');
+
+}
 
 function connectDB($config){
     try{
