@@ -2,4 +2,4 @@
 
 require 'app/index.php';
 
-require 'resouces/views/index.blade.php';
+require 'resources/views/index.blade.php';
