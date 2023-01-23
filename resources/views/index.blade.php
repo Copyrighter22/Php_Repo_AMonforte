@@ -22,12 +22,12 @@
         <tr>
            <th>Id</th>
             <th>Title</th>
-            <th>Description</th>
+            <th>Description1</th>
             <th>Completed</th>
             <th></th>
         </tr>
 
-        <?php foreach ($task as $task): ?>
+        <?php foreach ($tasks as $task): ?>
         <tr>
             <th><?=$task->id;?></th>
             <th><?=$task->title;?></th>

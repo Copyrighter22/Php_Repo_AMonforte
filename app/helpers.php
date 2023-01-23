@@ -1,4 +1,7 @@
 <?php
+
+use App\Models\Task;
+
 function greet(){
 $name = htmlspecialchars($_GET['name']);
 $cognom = htmlspecialchars($_GET['cognom']);
@@ -12,20 +15,10 @@ function dd($xivato)
     die();
 }
 function fetchAllTask($dbh){
-    $statement = $dbh->prepare('SELECT * FROM task;');
+    $statement = $dbh->prepare('SELECT * FROM tasks;');
 
     $statement->execute();
 
-    return $statement->fetchAll(PDO::FETCH_CLASS, 'Task');
+    return $statement->fetchAll(PDO::FETCH_CLASS, Task::class);
 
-}
-
-function connectDB($config){
-    try{
-        return new PDO( $config['database']['databasetype'] . ':host=' . $config['database']['host'] . ';dbname=' . $config['database']['name'],
-            $config['database']['user'],
-            $config['database']['password']);
-    }catch (\Exception $e){
-        echo 'Error de connexió a la base de dades';
-    }
 }

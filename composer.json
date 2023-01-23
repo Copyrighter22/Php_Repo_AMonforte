@@ -1,0 +1,11 @@
+{
+    "name": "copyrighter22/phpacacham09",
+    "description": "Bla bla",
+    "type": "project",
+    "autoload": {
+        "classmap": [
+            "./"
+        ]
+    },
+    "require": {}
+}
