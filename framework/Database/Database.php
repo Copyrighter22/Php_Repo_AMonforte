@@ -3,6 +3,7 @@
 namespace framework\Database;
 
 use App\Models\Task;
+use Framework\App;
 use PDO;
 
 class Database
@@ -20,10 +21,9 @@ class Database
         $this->connection = new Connection($config);
     }
 
-
     function selectAll($table)
     {
-        $dbh = $this->connection->connectDB($this->config);
+        $dbh = $this->connection->connectDB();
         $statement = $dbh->prepare("SELECT * FROM $table;");
 
         $statement->execute();

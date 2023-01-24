@@ -8,7 +8,11 @@ class ComposerStaticInitced21377248fe9a23e5633bdd3077430
 {
     public static $classMap = array (
         'App\\Models\\Task' => __DIR__ . '/../..' . '/app/Models/Task.php',
+        'ComposerAutoloaderInitced21377248fe9a23e5633bdd3077430' => __DIR__ . '/..' . '/composer/autoload_real.php',
+        'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',
+        'Composer\\Autoload\\ComposerStaticInitced21377248fe9a23e5633bdd3077430' => __DIR__ . '/..' . '/composer/autoload_static.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Framework\\App' => __DIR__ . '/../..' . '/framework/App.php',
         'framework\\Database\\Connection' => __DIR__ . '/../..' . '/framework/Database/Connection.php',
         'framework\\Database\\Database' => __DIR__ . '/../..' . '/framework/Database/Database.php',
     );

@@ -5,16 +5,20 @@ namespace framework\Database;
 use PDO;
 class Connection
 {
-    private $config;
-    public function __construct($config)
+    private static $config;
+
+    // NAMED CONSTRUCTOR
+    public static function make($config)
     {
-        $this->config = $config;
+        static::$config = $config;
+        return self;
     }
+
     function connectDB(){
         try{
-            return new PDO( $this->config['database']['databasetype'] . ':host=' . $this->config['database']['host'] . ';dbname=' . $this->config['database']['name'],
-                $this->config['database']['user'],
-                $this->config['database']['password']);
+            return new PDO( $this->config['databasetype'] . ':host=' . $this->config['host'] . ';dbname=' . $this->config['name'],
+                $this->config['user'],
+                $this->config['password']);
         }catch (\Exception $e){
             echo 'Error de connexió a la base de dades';
         }
