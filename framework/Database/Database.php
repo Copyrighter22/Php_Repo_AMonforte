@@ -3,28 +3,20 @@
 namespace framework\Database;
 
 use App\Models\Task;
-use Framework\App;
 use PDO;
 
 class Database
 {
-    public $config;
+    protected $pdo;
 
-
-    /**
-     * @param $config
-     * @param $connection
-     */
-    public function __construct($config)
+    public function __construct($pdo)
     {
-        $this->config = $config;
-        $this->connection = new Connection($config);
+        $this->pdo = $pdo;
     }
 
-    function selectAll($table)
-    {
-        $dbh = $this->connection->connectDB();
-        $statement = $dbh->prepare("SELECT * FROM $table;");
+    public  function selectAll($table){
+
+        $statement = $this->pdo->prepare("SELECT * FROM $table;");
 
         $statement->execute();
 
