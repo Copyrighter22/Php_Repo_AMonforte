@@ -6,12 +6,12 @@ use framework\Database\Connection;
 use framework\Database\Database;
 use Framework\Route;
 
-$routes = require 'routes.php';
+$routes = require '../routes.php';
 
 $dotenv = Dotenv::createImmutable(__DIR__.'/..');
 $dotenv->load();
 // Laravel Service Providers
-App::bind('config', require 'config.php');
+App::bind('config', require '../config.php');
 
 App::bind('database', new Database(
     Connection::make(App::get('config')['database'])
