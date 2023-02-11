@@ -25,26 +25,7 @@
     </ul>
 </nav>
 <header>
-    <h1><?=$greeting;?></h1>
-
-    <table>
-        <tr>
-           <th>Id</th>
-            <th>Title</th>
-            <th>Description1</th>
-            <th>Completed</th>
-            <th></th>
-        </tr>
-
-        <?php foreach ($tasks as $task): ?>
-        <tr>
-            <th><?=$task->id;?></th>
-            <th><?=$task->title;?></th>
-            <th><?=$task->description;?></th>
-            <th><?=$task->complited;?></th>
-        </tr>
-        <?php endforeach; ?>
-    </table>
+  TODO CONTACT HERE
 </header>
 </body>
 </html>
