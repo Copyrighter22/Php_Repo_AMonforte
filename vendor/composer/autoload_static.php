@@ -63,6 +63,7 @@ class ComposerStaticInitced21377248fe9a23e5633bdd3077430
 
     public static $classMap = array (
         'App\\Models\\Task' => __DIR__ . '/../..' . '/app/Models/Task.php',
+        'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'ComposerAutoloaderInitced21377248fe9a23e5633bdd3077430' => __DIR__ . '/..' . '/composer/autoload_real.php',
         'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',

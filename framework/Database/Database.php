@@ -3,6 +3,8 @@
 namespace framework\Database;
 
 use App\Models\Task;
+use App\Models\User;
+
 use PDO;
 
 class Database
